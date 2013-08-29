@@ -52,6 +52,7 @@ void MainWindow::on_actionExit_triggered()
 
 void MainWindow::on_actionPlay_triggered()
 {
+    ui->lineEdit->hide();
     player->play();
 }
 
