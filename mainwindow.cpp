@@ -12,10 +12,14 @@ MainWindow::MainWindow(QWidget *parent) :
     player=new QMediaPlayer(this);
     ui->gridLayout->addWidget(vid);
     player->setVideoOutput(vid);
+    player->setVolume(70);
+    ui->verticalSlider->setRange(0,100);
+    ui->verticalSlider->setValue(player->volume());
     ui->horizontalSlider->setRange(0,player->duration()/1000);
     connect(player, SIGNAL(durationChanged(qint64)), SLOT(durationChanged(qint64)));
     connect(player, SIGNAL(positionChanged(qint64)), SLOT(positionChanged(qint64)));
     connect(ui->horizontalSlider,SIGNAL(sliderMoved(int)), SLOT(seek(int)));
+    connect(ui->verticalSlider,SIGNAL(sliderMoved(int)),player,SLOT(setVolume(int)));
 
 
 }
