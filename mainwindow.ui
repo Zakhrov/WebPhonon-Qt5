@@ -96,6 +96,9 @@
    <property name="text">
     <string>Local File</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
   </action>
   <action name="actionStream">
    <property name="icon">
@@ -104,6 +107,9 @@
    </property>
    <property name="text">
     <string>Stream</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+O</string>
    </property>
   </action>
   <action name="actionExit">
@@ -114,6 +120,9 @@
    <property name="text">
     <string>Exit</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
   </action>
   <action name="actionPlay">
    <property name="icon">
@@ -122,6 +131,9 @@
    </property>
    <property name="text">
     <string>Play</string>
+   </property>
+   <property name="shortcut">
+    <string>Media Play</string>
    </property>
   </action>
   <action name="actionPause">
@@ -132,6 +144,9 @@
    <property name="text">
     <string>Pause</string>
    </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
   </action>
   <action name="actionStop">
    <property name="icon">
@@ -141,6 +156,9 @@
    <property name="text">
     <string>Stop</string>
    </property>
+   <property name="shortcut">
+    <string>Media Stop</string>
+   </property>
   </action>
   <action name="actionFull_Screen">
    <property name="icon">
@@ -149,6 +167,9 @@
    </property>
    <property name="text">
     <string>Full Screen</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F</string>
    </property>
   </action>
  </widget>
