@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include <QSplashScreen>
+#include <QThread>
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -11,6 +12,7 @@ int main(int argc, char *argv[])
     splash.setPixmap(pix);
     splash.show();
     w.showMaximized();
-
+    //QThread::sleep(5);
+    splash.finish(&w);
     return a.exec();
 }
