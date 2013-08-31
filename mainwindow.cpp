@@ -71,8 +71,11 @@ void MainWindow::on_actionStop_triggered()
 
 void MainWindow::on_actionFull_Screen_triggered()
 {
-    if(vid->isFullScreen()==true)
+    if(vid->isFullScreen()==true){
+
         vid->setFullScreen(false);
+        ui->gridLayout->addWidget(vid);
+    }
     else
         vid->setFullScreen(true);
 }
