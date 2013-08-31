@@ -13,6 +13,5 @@ int main(int argc, char *argv[])
     splash.show();
     MainWindow w;
     w.showMaximized();
-    splash.finish(&w);
     return a.exec();
 }
