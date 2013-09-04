@@ -34,6 +34,7 @@ void MainWindow::on_actionLocal_File_triggered()
     QString fname;
     fname=QFileDialog::getOpenFileName(this,tr("Open"));
     player->setMedia(QUrl::fromLocalFile(fname));
+    player->play();
 
 }
 
