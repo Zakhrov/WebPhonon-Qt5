@@ -1,0 +1,5 @@
+webphonon-qt5 (1.1-1) raring; urgency=low
+
+  * Initial Qt5 release for Ubuntu/Debian
+
+ -- Aaron Zakhrov <aaron.zakhrov@gmail.com>  Thu, 05 Sep 2013 16:48:27 +0530
