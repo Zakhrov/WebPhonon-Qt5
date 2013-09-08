@@ -3,7 +3,7 @@ Maintainer: Aaron Zakhrov <aaron.zakhrov@gmail.com>
 Section: misc
 Priority: optional
 Standards-Version: 3.9.2
-Build-Depends: debhelper (>= 8), cdbs (>=0.4),  qt5-qmake (>=5.0), qtmultimedia5-dev(>=5.0), qt5-default (>=5.0)
+Build-Depends: debhelper (>= 8), cdbs (>=0.4),  qt5-qmake (>=5.0), qtmultimedia5-dev(>=5.0), qt5-default (>=5.0), libpulse-dev (>=1.1)
 
 Package: webphonon-qt5
 Architecture: any
