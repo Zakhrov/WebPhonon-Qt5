@@ -1,11 +1,11 @@
-Source: webphonon
+Source: webphonon-qt5
 Maintainer: Aaron Zakhrov <aaron.zakhrov@gmail.com>
 Section: misc
 Priority: optional
 Standards-Version: 3.9.2
-Build-Depends: debhelper (>= 8), cdbs (>=0.4), libqt4-dev (>=4.6), qmake-qt4 (>=4.6), libphonon-dev (>=4.6)
+Build-Depends: debhelper (>= 8), cdbs (>=0.4),  qt5-qmake (>=5.0), qtmultimedia5-dev(>=4.6)
 
-Package: webphonon
+Package: webphonon-qt5
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: media player
