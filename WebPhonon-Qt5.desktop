@@ -1,0 +1,21 @@
+[Desktop Entry]
+Categories=Qt;KDE;AudioVideo;
+Comment[en_US]=Play local media files or HTTP streams
+Comment=Play local media files, HTTP streams
+Encoding=UTF-8
+Exec=WebPhonon-Qt5 %u
+GenericName[en_US]=Media Player
+GenericName=Media Player
+Icon=WebPhononIcon
+MimeType=
+Name[en_US]=WebPhonon-Qt5
+Name=WebPhonon-Qt5
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

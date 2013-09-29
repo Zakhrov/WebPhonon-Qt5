@@ -2,9 +2,9 @@
 #define MAINWINDOW_H
 #include <QtMultimedia/QMediaPlayer>
 #include <QtMultimediaWidgets/QVideoWidget>
-
 #include <QMainWindow>
-
+#include <QTableWidgetItem>
+#include <QMediaContent>
 namespace Ui {
 class MainWindow;
 }
@@ -38,10 +38,17 @@ private slots:
 
     void seek(int);
 
+
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer *player;
     QVideoWidget *vid;
+    QMediaPlaylist *playlist;
+        QList<QMediaContent> urls;
+        QTableWidgetItem *item;
+
 };
 
 #endif // MAINWINDOW_H

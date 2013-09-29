@@ -1,6 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QFileDialog>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QMediaPlaylist>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -10,9 +13,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit->hide();
     vid=new QVideoWidget(this);
     player=new QMediaPlayer(this);
+    playlist=new QMediaPlaylist(this);
+    player->setPlaylist(playlist);
     ui->gridLayout->addWidget(vid);
     player->setVideoOutput(vid);
     player->setVolume(70);
+    ui->pushButton->hide();
     ui->verticalSlider->setRange(0,100);
     ui->verticalSlider->setValue(player->volume());
     ui->horizontalSlider->setRange(0,player->duration()/1000);
@@ -20,7 +26,6 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(player, SIGNAL(positionChanged(qint64)), SLOT(positionChanged(qint64)));
     connect(ui->horizontalSlider,SIGNAL(sliderMoved(int)), SLOT(seek(int)));
     connect(ui->verticalSlider,SIGNAL(sliderMoved(int)),player,SLOT(setVolume(int)));
-
 
 }
 
@@ -40,10 +45,8 @@ void MainWindow::on_actionLocal_File_triggered()
 
 void MainWindow::on_actionStream_triggered()
 {
-    QUrl url;
     ui->lineEdit->show();
-    url=ui->lineEdit->text();
-    player->setMedia(url);
+
 }
 
 void MainWindow::on_actionExit_triggered()
@@ -95,4 +98,13 @@ void MainWindow::durationChanged(qint64 duration)
 void MainWindow::seek(int secs)
 {
     player->setPosition(secs*1000);
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    QUrl url;
+    url=ui->lineEdit->text();
+    player->setMedia(url);
+    ui->lineEdit->hide();
+    ui->pushButton->hide();
 }
