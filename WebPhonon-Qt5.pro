@@ -12,9 +12,11 @@ TARGET = WebPhonon-Qt5
 TEMPLATE = app
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    dropwidget.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    dropwidget.h
 
 FORMS    += mainwindow.ui
 

@@ -8,6 +8,9 @@
         <file>document-open.png</file>
         <file>applications-internet.png</file>
         <file>WebPhononIcon.png</file>
+        <file>view-close.png</file>
+        <file>media-skip-backward.png</file>
+        <file>media-skip-forward.png</file>
     </qresource>
     <qresource prefix="/Splash">
         <file>WebPhonon-Master-text2.png</file>

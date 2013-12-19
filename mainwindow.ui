@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>852</width>
-    <height>364</height>
+    <width>842</width>
+    <height>354</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,30 +19,37 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="2" column="0">
+    <item row="4" column="1">
+     <layout class="QGridLayout" name="gridLayout"/>
+    </item>
+    <item row="5" column="1">
      <widget class="QSlider" name="horizontalSlider">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
     </item>
-    <item row="0" column="0">
-     <widget class="QLineEdit" name="lineEdit"/>
+    <item row="3" column="1">
+     <widget class="QTableWidget" name="tableWidget"/>
     </item>
-    <item row="1" column="2">
+    <item row="0" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="lineEdit"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="4" column="2">
      <widget class="QSlider" name="verticalSlider">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0" colspan="2">
-     <layout class="QGridLayout" name="gridLayout"/>
-    </item>
-    <item row="0" column="1">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Load</string>
       </property>
      </widget>
     </item>
@@ -53,8 +60,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>852</width>
-     <height>20</height>
+     <width>842</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -79,6 +86,9 @@
     <addaction name="actionPause"/>
     <addaction name="actionStop"/>
     <addaction name="actionFull_Screen"/>
+    <addaction name="actionBack"/>
+    <addaction name="actionFoward"/>
+    <addaction name="actionShow_Playlist"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuPlayer"/>
@@ -92,10 +102,13 @@
    </attribute>
    <addaction name="actionLocal_File"/>
    <addaction name="actionStream"/>
+   <addaction name="actionBack"/>
    <addaction name="actionPlay"/>
    <addaction name="actionPause"/>
    <addaction name="actionStop"/>
+   <addaction name="actionFoward"/>
    <addaction name="actionFull_Screen"/>
+   <addaction name="actionShow_Playlist"/>
    <addaction name="actionExit"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -181,6 +194,33 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+F</string>
+   </property>
+  </action>
+  <action name="actionBack">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/media-skip-backward.png</normaloff>:/Icons/media-skip-backward.png</iconset>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </action>
+  <action name="actionFoward">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/media-skip-forward.png</normaloff>:/Icons/media-skip-forward.png</iconset>
+   </property>
+   <property name="text">
+    <string>Foward</string>
+   </property>
+  </action>
+  <action name="actionShow_Playlist">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/view-close.png</normaloff>:/Icons/view-close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Playlist</string>
    </property>
   </action>
  </widget>
