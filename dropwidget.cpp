@@ -2,9 +2,10 @@
 #include <QtGui>
 #include <QWidget>
 #include <QUrl>
+#include <phonon4qt5/phonon/VideoWidget>
 
 DropWidget::DropWidget(QWidget *parent) :
-    QVideoWidget(parent)
+    Phonon::VideoWidget(parent)
 {
     setAcceptDrops(true);
     //setAttribute(Qt::WA_TransparentForMouseEvents);

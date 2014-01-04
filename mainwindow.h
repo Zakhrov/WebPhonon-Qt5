@@ -1,10 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include <QtMultimedia/QMediaPlayer>
-#include <QtMultimediaWidgets/QVideoWidget>
+#include <phonon4qt5/phonon/VideoWidget>
+#include <phonon4qt5/phonon/MediaObject>
+#include <phonon4qt5/phonon/MediaSource>
+#include <phonon4qt5/phonon/AudioOutput>
 #include <QMainWindow>
 #include <QTableWidgetItem>
-#include <QMediaContent>
 #include "dropwidget.h"
 namespace Ui {
 class MainWindow;
@@ -34,11 +35,12 @@ private slots:
 
     void on_actionFull_Screen_triggered();
 
-    void positionChanged(qint64);
+//    void positionChanged(qint64);
 
-    void durationChanged(qint64);
+//    void durationChanged(qint64);
 
-    void seek(int);
+//    void seek(int);
+    void next();
 
     void widgetpause(QKeyEvent *event);
 
@@ -52,10 +54,10 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    QMediaPlayer *player;
+    Phonon::MediaObject *med;
     DropWidget *vid;
-    QMediaPlaylist *playlist;
-        QList<QMediaContent> urls;
+    Phonon::AudioOutput *sndout;
+        QList<Phonon::MediaSource> sources;
         QTableWidgetItem *item;
 
 };
