@@ -1,9 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include <phonon4qt5/phonon/VideoWidget>
-#include <phonon4qt5/phonon/MediaObject>
-#include <phonon4qt5/phonon/MediaSource>
-#include <phonon4qt5/phonon/AudioOutput>
+#include <KDE/Phonon/VideoWidget>
+#include <KDE/Phonon/MediaObject>
+#include <KDE/Phonon/MediaSource>
+#include <KDE/Phonon/AudioOutput>
 #include <QMainWindow>
 #include <QTableWidgetItem>
 #include "dropwidget.h"
@@ -52,6 +52,24 @@ private slots:
 
     void on_actionShow_Playlist_triggered();
 
+    void on_actionVolume_Up_triggered();
+
+    void on_actionVolume_Down_triggered();
+
+    void on_actionSkip_Foward_triggered();
+
+    void on_actionSkip_Backward_triggered();
+
+    void on_actionClear_Playlist_triggered();
+
+    void on_actionAuto_triggered();
+
+    void on_actionSquare_triggered();
+
+    void on_actionWideScreen_triggered();
+    void timechanged(qint64);
+    void totalTimeChanged(qint64);
+
 private:
     Ui::MainWindow *ui;
     Phonon::MediaObject *med;
@@ -59,6 +77,9 @@ private:
     Phonon::AudioOutput *sndout;
         QList<Phonon::MediaSource> sources;
         QTableWidgetItem *item;
+        qreal volume;
+        QStringList collabel;
+
 
 };
 

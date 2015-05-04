@@ -1,8 +1,8 @@
 #ifndef DROPWIDGET_H
 #define DROPWIDGET_H
 
-#include <phonon4qt5/phonon/VideoWidget>
-//#include <phonon4qt5/KDE/Phonon/VideoWidget>
+//#include <phonon4qt5/phonon/VideoWidget>
+#include <KDE/Phonon/VideoWidget>
 #include <QtGui>
 #include <QWidget>
 class DropWidget : public Phonon::VideoWidget

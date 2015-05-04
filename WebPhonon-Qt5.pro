@@ -4,9 +4,10 @@
 #
 #-------------------------------------------------
 
-QT       += core gui phonon4qt5 #multimedia multimediawidgets sql
+QT       += core gui #phonon4qt5 #multimedia multimediawidgets sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 
 TARGET = WebPhonon-Qt5
 TEMPLATE = app
@@ -61,3 +62,8 @@ OTHER_FILES += \
     icon512.files +=    icons/512x512/WebPhononIcon.png
 
 INSTALLS += target icon16 icon32 icon48 icon64 icon128 icon256 icon512 desktop
+
+unix:!macx: LIBS += -L$$PWD/../../../../usr/lib64/ -lphonon4qt5
+
+INCLUDEPATH += $$PWD/../../../../usr/include/phonon4qt5
+DEPENDPATH += $$PWD/../../../../usr/include/phonon4qt5

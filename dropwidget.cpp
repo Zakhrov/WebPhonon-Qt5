@@ -2,7 +2,7 @@
 #include <QtGui>
 #include <QWidget>
 #include <QUrl>
-#include <phonon4qt5/phonon/VideoWidget>
+#include <KDE/Phonon/VideoWidget>
 
 DropWidget::DropWidget(QWidget *parent) :
     Phonon::VideoWidget(parent)

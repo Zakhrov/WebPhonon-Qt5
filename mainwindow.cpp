@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QFileDialog>
+#include <QStandardPaths>
+#include <QDesktopServices>
 //#include <QSqlDatabase>
 //#include <QSqlQuery>
 //#include <QMediaPlaylist>
@@ -31,7 +33,15 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(med,SIGNAL(aboutToFinish()),this,SLOT(next()));
     connect(vid,SIGNAL(geturls(const QMimeData*)),this,SLOT(dropdata(const QMimeData*)));
     connect(vid,SIGNAL(capturespace(QKeyEvent*)),this,SLOT(widgetpause(QKeyEvent*)));
-    ui->tableWidget->setColumnCount(1);
+    connect(med,SIGNAL(tick(qint64)),this,SLOT(timechanged(qint64)));
+    connect(med,SIGNAL(totalTimeChanged(qint64)),this,SLOT(totalTimeChanged(qint64)));
+    ui->tableWidget->setColumnCount(2);
+    collabel.append("URL");
+    collabel.append("Name");
+    ui->tableWidget->setHorizontalHeaderLabels(collabel);
+    volume=ui->volumeSlider->audioOutput()->volumeDecibel();
+    ui->label_13->setText(QString::number(volume));
+    ui->tableWidget->setVisible(false);
 
 
 }
@@ -72,7 +82,7 @@ void MainWindow::on_actionLocal_File_triggered()
     int i;
     int index=sources.size();
     QStringList fnames;
-    fnames=QFileDialog::getOpenFileNames(this,tr("Open"));
+    fnames=QFileDialog::getOpenFileNames(this,tr("Choose Files"),QStandardPaths::writableLocation(QStandardPaths::MoviesLocation));
     foreach(QString fname,fnames)
     {
         sources.append(Phonon::MediaSource(QUrl::fromLocalFile(fname)));
@@ -84,9 +94,13 @@ void MainWindow::on_actionLocal_File_triggered()
     ui->tableWidget->setItem(i,0,uitem);
     }
     ui->tableWidget->resizeColumnsToContents();
-    med->setCurrentSource(sources.at(index));
-    med->play();
+    if(med->state()!=Phonon::PlayingState)
+    {
 
+        if(!sources.isEmpty())
+       med->setCurrentSource(sources.at(index));
+       this->on_actionPlay_triggered();
+    }
 }
 
 void MainWindow::on_actionStream_triggered()
@@ -159,22 +173,30 @@ void MainWindow::widgetpause(QKeyEvent *event)
 {
     switch(event->key())
        {
-           case Qt::Key_Space: if(med->state()==Phonon::PlayingState)
-               med->pause();
-           else
-               med->play();
+           case Qt::Key_Space: this->on_actionPause_triggered();
            break;
        case Qt::Key_MediaPrevious:this->on_actionBack_triggered();
            break;
        case Qt::Key_MediaNext:this->on_actionFoward_triggered();
            break;
-       case Qt::Key_MediaStop: med->stop();;
+       case Qt::Key_MediaStop: this->on_actionStop_triggered();
            break;
-       case Qt::Key_F: if(vid->isFullScreen())
-               vid->setFullScreen(false);
-           else
-               vid->setFullScreen(true);
+       case Qt::Key_F: this->on_actionFull_Screen_triggered();
            break;
+    case Qt::Key_Left: this->on_actionSkip_Backward_triggered();
+        break;
+    case Qt::Key_Right: this->on_actionSkip_Foward_triggered();
+        break;
+    case Qt::Key_Up: this->on_actionVolume_Up_triggered();
+        break;
+    case Qt::Key_Down: this->on_actionVolume_Down_triggered();
+        break;
+    case Qt::Key_1: this->on_actionAuto_triggered();
+        break;
+    case Qt::Key_2: this->on_actionSquare_triggered();
+        break;
+    case Qt::Key_3: this->on_actionWideScreen_triggered();
+        break;
        default: med->play();
        }
 }
@@ -216,4 +238,110 @@ void MainWindow::on_actionShow_Playlist_triggered()
     ui->tableWidget->setVisible(true);
     else
         ui->tableWidget->setVisible(false);
+}
+
+void MainWindow::on_actionVolume_Up_triggered()
+{
+    volume=ui->volumeSlider->audioOutput()->volumeDecibel();
+    qreal newvol=volume+0.5;
+    ui->volumeSlider->audioOutput()->setVolumeDecibel(newvol);
+    ui->label_13->setText(QString::number(newvol));
+}
+
+void MainWindow::on_actionVolume_Down_triggered()
+{
+    volume=ui->volumeSlider->audioOutput()->volumeDecibel();
+    qreal newvol=volume-0.5;
+    ui->volumeSlider->audioOutput()->setVolumeDecibel(newvol);
+    ui->label_13->setText(QString::number(newvol));
+}
+
+void MainWindow::on_actionSkip_Foward_triggered()
+{
+    med->seek(med->currentTime()+10000);
+}
+
+void MainWindow::on_actionSkip_Backward_triggered()
+{
+    med->seek(med->currentTime()-10000);
+}
+
+void MainWindow::on_actionClear_Playlist_triggered()
+{
+    sources.clear();
+    int i, rcnt;
+    rcnt=ui->tableWidget->rowCount();
+    ui->tableWidget->clearContents();
+    for(i=0;i<=rcnt;i++)
+    {
+        ui->tableWidget->removeRow(i);
+    }
+
+
+}
+
+void MainWindow::on_actionAuto_triggered()
+{
+    vid->setAspectRatio(Phonon::VideoWidget::AspectRatioAuto);
+}
+
+void MainWindow::on_actionSquare_triggered()
+{
+    vid->setAspectRatio(Phonon::VideoWidget::AspectRatio4_3);
+}
+
+void MainWindow::on_actionWideScreen_triggered()
+{
+ vid->setAspectRatio(Phonon::VideoWidget::AspectRatio16_9);
+}
+void MainWindow::timechanged(qint64 time)
+{
+   qint64 hour,min,sec,dispsec,dmin;
+    hour=min=dmin=0;
+    time=med->currentTime();
+    sec=time/1000;
+    dispsec=sec;
+    if(sec>59)
+    {
+        min=sec/60;
+        dispsec=sec%60;
+        dmin=min;
+
+    }
+    if(min>59)
+    {
+        hour=min/60;
+        dmin=min%60;
+    }
+    ui->hourlabel_1->setText(QString::number(hour));
+    ui->minlabel_1->setText(QString::number(dmin));
+    ui->seclabel_1->setText(QString::number(dispsec));
+
+
+
+}
+
+void MainWindow::totalTimeChanged(qint64 newtottime)
+{
+    qint64 hour,min,sec,dispsec,dmin;
+     hour=min=sec=dispsec=dmin=0;
+     newtottime=med->totalTime();
+     sec=newtottime/1000;
+     dispsec=sec;
+     if(sec>59)
+     {
+         min=sec/60;
+         dispsec=sec%60;
+         dmin=min;
+     }
+     if(min>59)
+     {
+         hour=min/60;
+         dmin=min%60;
+     }
+     ui->hourlabel_2->setText(QString::number(hour));
+     ui->minlabel_2->setText(QString::number(dmin));
+     ui->seclabel_2->setText(QString::number(dispsec));
+
+
 }
