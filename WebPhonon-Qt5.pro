@@ -40,7 +40,18 @@ OTHER_FILES += \
     icons/128x128/WebPhononIcon.png \
     icons/256x256/WebPhononIcon.png \
     icons/512x512/WebPhononIcon.png \
-    WebPhonon-Qt5.desktop
+    WebPhonon-Qt5.desktop \
+    CMakeLists.txt \
+    icons/PlayWithWebPhonon-Qt5.desktop \
+    icons/WebPhonon-Qt5.desktop \
+    icons/hi16-apps-WebPhonon-Qt5.png \
+    icons/hi32-apps-WebPhonon-Qt5.png \
+    icons/hi48-apps-WebPhonon-Qt5.png \
+    icons/hi64-apps-WebPhonon-Qt5.png \
+    icons/hi128-apps-WebPhonon-Qt5.png \
+    icons/hi256-apps-WebPhonon-Qt5.png \
+    icons/hi512-apps-WebPhonon-Qt5.png \
+    icons/CMakeLists.txt
 
     target.path = /usr/bin
     desktop.path= /usr/share/applications
