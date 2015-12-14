@@ -46,6 +46,27 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 
+void MainWindow::cmdopen(QString cmdfile)
+{
+    int i;
+        int index=sources.size();
+
+        sources.append(Phonon::MediaSource(QUrl(cmdfile)));
+        QTableWidgetItem *fitem=new QTableWidgetItem(cmdfile,1);
+        i=ui->tableWidget->rowCount();
+        ui->tableWidget->insertRow(i);
+        ui->tableWidget->setItem(i,0,fitem);
+        if(med->state()!=Phonon::PlayingState)
+        {
+
+            if(!sources.isEmpty())
+           med->setCurrentSource(sources.at(index));
+           this->on_actionPlay_triggered();
+        }
+
+        ui->tableWidget->resizeColumnsToContents();
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;

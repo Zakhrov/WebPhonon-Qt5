@@ -17,6 +17,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+     void cmdopen(QString cmdfile);
     ~MainWindow();
 public slots:
      void dropdata(const QMimeData *mimeData);
