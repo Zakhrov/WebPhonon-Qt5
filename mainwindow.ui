@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>834</width>
-    <height>346</height>
+    <width>672</width>
+    <height>294</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>WebPhonon-Qt5</string>
+   <string>WebPhonon</string>
   </property>
   <property name="windowIcon">
    <iconset resource="Icons.qrc">
@@ -19,96 +19,33 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="1">
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLineEdit" name="lineEdit"/>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton">
-        <property name="text">
-         <string>Load</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="3" column="1">
-     <widget class="QTableWidget" name="tableWidget"/>
-    </item>
-    <item row="5" column="1">
+    <item row="2" column="0">
      <layout class="QGridLayout" name="gridLayout"/>
     </item>
-    <item row="5" column="2">
-     <widget class="Phonon::VolumeSlider" name="volumeSlider">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
+    <item row="3" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="Phonon::SeekSlider" name="seekSlider"/>
       </item>
       <item>
-       <widget class="QLabel" name="hourlabel_1">
+       <widget class="QLabel" name="hourlabel1">
         <property name="text">
          <string>HH</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="label_9">
         <property name="text">
          <string>:</string>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="minlabel_1">
-        <property name="text">
-         <string>MM</string>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="seclabel_1">
-        <property name="text">
-         <string>SS</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>/</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="hourlabel_2">
-        <property name="text">
-         <string>HH</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_8">
-        <property name="text">
-         <string>:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="minlabel_2">
+       <widget class="QLabel" name="minlabel1">
         <property name="text">
          <string>MM</string>
         </property>
@@ -119,30 +56,111 @@
         <property name="text">
          <string>:</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="seclabel_2">
+       <widget class="QLabel" name="slabel1">
         <property name="text">
-         <string>SS </string>
+         <string>SS</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>/</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="hourlabel2">
+        <property name="text">
+         <string>HH</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="minlabel2">
+        <property name="text">
+         <string>MM</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_12">
         <property name="text">
-         <string>Amplifier dB Level </string>
+         <string>:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_13">
+       <widget class="QLabel" name="slabel2">
         <property name="text">
-         <string>TextLabel</string>
+         <string>SS</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Amplifier dB Level</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>0</string>
         </property>
        </widget>
       </item>
      </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="lineEdit"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>&amp;launch</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="1">
+     <widget class="Phonon::VolumeSlider" name="volumeSlider">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <layout class="QGridLayout" name="gridLayout_3"/>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QTableWidget" name="tableWidget"/>
     </item>
    </layout>
   </widget>
@@ -151,27 +169,28 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>834</width>
-     <height>21</height>
+     <width>672</width>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>&amp;File</string>
     </property>
     <widget class="QMenu" name="menuOpen">
      <property name="title">
-      <string>Open</string>
+      <string>&amp;Open</string>
      </property>
      <addaction name="actionLocal_File"/>
-     <addaction name="actionStream"/>
+     <addaction name="actionHttp_Stream"/>
+     <addaction name="actionFrom_Database"/>
     </widget>
     <addaction name="menuOpen"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuPlayer">
     <property name="title">
-     <string>Player</string>
+     <string>&amp;Player</string>
     </property>
     <widget class="QMenu" name="menuAspect_Ratio">
      <property name="title">
@@ -187,16 +206,35 @@
     <addaction name="actionFull_Screen"/>
     <addaction name="actionBack"/>
     <addaction name="actionFoward"/>
-    <addaction name="actionShow_Playlist"/>
     <addaction name="actionVolume_Up"/>
     <addaction name="actionVolume_Down"/>
     <addaction name="actionSkip_Foward"/>
     <addaction name="actionSkip_Backward"/>
     <addaction name="actionClear_Playlist"/>
     <addaction name="menuAspect_Ratio"/>
+    <addaction name="actionEqualizer"/>
+    <addaction name="actionOpen_Visualizer"/>
+   </widget>
+   <widget class="QMenu" name="menuDatabase">
+    <property name="title">
+     <string>&amp;Database</string>
+    </property>
+    <addaction name="actionSet_Database"/>
+    <addaction name="actionManage_Databases"/>
+    <addaction name="actionHide_Table"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAbout_WebPhonon"/>
+    <addaction name="actionAvailable_Formats"/>
+    <addaction name="actionUser_Manual"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuPlayer"/>
+   <addaction name="menuDatabase"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -206,14 +244,19 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionLocal_File"/>
-   <addaction name="actionStream"/>
+   <addaction name="actionHttp_Stream"/>
+   <addaction name="actionFrom_Database"/>
+   <addaction name="separator"/>
    <addaction name="actionBack"/>
    <addaction name="actionPlay"/>
    <addaction name="actionPause"/>
    <addaction name="actionStop"/>
    <addaction name="actionFoward"/>
    <addaction name="actionFull_Screen"/>
-   <addaction name="actionShow_Playlist"/>
+   <addaction name="actionSet_Database"/>
+   <addaction name="actionHide_Table"/>
+   <addaction name="actionClear_Playlist"/>
+   <addaction name="actionManage_Databases"/>
    <addaction name="actionExit"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -223,34 +266,22 @@
      <normaloff>:/Icons/document-open.png</normaloff>:/Icons/document-open.png</iconset>
    </property>
    <property name="text">
-    <string>Local File</string>
+    <string>&amp;Local File</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
    </property>
   </action>
-  <action name="actionStream">
+  <action name="actionHttp_Stream">
    <property name="icon">
     <iconset resource="Icons.qrc">
      <normaloff>:/Icons/applications-internet.png</normaloff>:/Icons/applications-internet.png</iconset>
    </property>
    <property name="text">
-    <string>Stream</string>
+    <string>&amp;Http Stream</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Shift+O</string>
-   </property>
-  </action>
-  <action name="actionExit">
-   <property name="icon">
-    <iconset resource="Icons.qrc">
-     <normaloff>:/Icons/application-exit.png</normaloff>:/Icons/application-exit.png</iconset>
-   </property>
-   <property name="text">
-    <string>Exit</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Q</string>
+    <string>Ctrl+U</string>
    </property>
   </action>
   <action name="actionPlay">
@@ -301,6 +332,70 @@
     <string>F</string>
    </property>
   </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/application-exit.png</normaloff>:/Icons/application-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionSet_Database">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/document-export-table.png</normaloff>:/Icons/document-export-table.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Database</string>
+   </property>
+  </action>
+  <action name="actionFrom_Database">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/application-vnd.oasis.opendocument.database.png</normaloff>:/Icons/application-vnd.oasis.opendocument.database.png</iconset>
+   </property>
+   <property name="text">
+    <string>From &amp;Database</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionManage_Databases">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/server-database.png</normaloff>:/Icons/server-database.png</iconset>
+   </property>
+   <property name="text">
+    <string>Manage Databases</string>
+   </property>
+  </action>
+  <action name="actionHide_Table">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/view-close.png</normaloff>:/Icons/view-close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Hide Table</string>
+   </property>
+  </action>
+  <action name="actionAvailable_Formats">
+   <property name="text">
+    <string>Available Formats</string>
+   </property>
+  </action>
+  <action name="actionUser_Manual">
+   <property name="text">
+    <string>User Manual</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
   <action name="actionBack">
    <property name="icon">
     <iconset resource="Icons.qrc">
@@ -308,6 +403,9 @@
    </property>
    <property name="text">
     <string>Back</string>
+   </property>
+   <property name="shortcut">
+    <string>Media Previous</string>
    </property>
   </action>
   <action name="actionFoward">
@@ -318,14 +416,8 @@
    <property name="text">
     <string>Foward</string>
    </property>
-  </action>
-  <action name="actionShow_Playlist">
-   <property name="icon">
-    <iconset resource="Icons.qrc">
-     <normaloff>:/Icons/view-close.png</normaloff>:/Icons/view-close.png</iconset>
-   </property>
-   <property name="text">
-    <string>Show Playlist</string>
+   <property name="shortcut">
+    <string>Media Next</string>
    </property>
   </action>
   <action name="actionVolume_Up">
@@ -333,7 +425,7 @@
     <string>Volume Up</string>
    </property>
    <property name="shortcut">
-    <string>Up</string>
+    <string>Ctrl+Up</string>
    </property>
   </action>
   <action name="actionVolume_Down">
@@ -341,7 +433,7 @@
     <string>Volume Down</string>
    </property>
    <property name="shortcut">
-    <string>Down</string>
+    <string>Ctrl+Down</string>
    </property>
   </action>
   <action name="actionSkip_Foward">
@@ -361,8 +453,17 @@
    </property>
   </action>
   <action name="actionClear_Playlist">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/edit-clear-list.png</normaloff>:/Icons/edit-clear-list.png</iconset>
+   </property>
    <property name="text">
     <string>Clear Playlist</string>
+   </property>
+  </action>
+  <action name="actionAbout_WebPhonon">
+   <property name="text">
+    <string>About WebPhonon</string>
    </property>
   </action>
   <action name="actionAuto">
@@ -383,10 +484,26 @@
   </action>
   <action name="actionWideScreen">
    <property name="text">
-    <string>Wide Screen</string>
+    <string>WideScreen</string>
    </property>
    <property name="shortcut">
     <string>3</string>
+   </property>
+  </action>
+  <action name="actionEqualizer">
+   <property name="text">
+    <string>Equalizer</string>
+   </property>
+   <property name="shortcut">
+    <string>E</string>
+   </property>
+  </action>
+  <action name="actionOpen_Visualizer">
+   <property name="text">
+    <string>Open Visualizer</string>
+   </property>
+   <property name="shortcut">
+    <string>V</string>
    </property>
   </action>
  </widget>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DBMainWindow</class>
+ <widget class="QMainWindow" name="DBMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1282</width>
+    <height>282</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Database Manager</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Icons.qrc">
+    <normaloff>:/Icons/WebPhononIcon.png</normaloff>:/Icons/WebPhononIcon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Add Movies</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>Add TV Shows</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>Add Music Videos</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="text">
+         <string>Add Songs</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="text">
+         <string>Add Actors</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_8">
+        <property name="text">
+         <string>Add Artists</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_9">
+        <property name="text">
+         <string>Add Albums</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="text">
+         <string>Add Movie Cast</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="text">
+         <string>Add TV Cast</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_12">
+        <property name="text">
+         <string>Link Actors to Music Videos</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_10">
+        <property name="text">
+         <string>Add Album Artists/Collaborators</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_11">
+        <property name="text">
+         <string>Link Music To Albums</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <widget class="QTableView" name="tableView"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1282</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDatabase">
+    <property name="title">
+     <string>Database</string>
+    </property>
+    <addaction name="actionCreate_Database"/>
+   </widget>
+   <widget class="QMenu" name="menuBrowser">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <widget class="QMenu" name="menuMovies">
+     <property name="title">
+      <string>Movies</string>
+     </property>
+     <addaction name="actionMovie_Info"/>
+     <addaction name="actionMovie_Cast"/>
+    </widget>
+    <widget class="QMenu" name="menuTV_Shows">
+     <property name="title">
+      <string>TV Shows</string>
+     </property>
+     <addaction name="actionShow_Info"/>
+     <addaction name="actionShow_Cast"/>
+    </widget>
+    <widget class="QMenu" name="menuMusic_Videos">
+     <property name="title">
+      <string>Music Videos</string>
+     </property>
+     <addaction name="actionMusic_Video_Info"/>
+     <addaction name="actionMusic_Video_Cast"/>
+    </widget>
+    <addaction name="menuMovies"/>
+    <addaction name="menuTV_Shows"/>
+    <addaction name="menuMusic_Videos"/>
+    <addaction name="actionSongs"/>
+    <addaction name="actionActors"/>
+    <addaction name="actionArtists"/>
+    <addaction name="actionAlbums"/>
+    <addaction name="actionAlbum_Artists_Collaborators"/>
+    <addaction name="actionAlbum_Tracks"/>
+   </widget>
+   <widget class="QMenu" name="menuDelete">
+    <property name="title">
+     <string>Delete</string>
+    </property>
+    <addaction name="actionDelete_Selected_Item"/>
+   </widget>
+   <addaction name="menuDatabase"/>
+   <addaction name="menuBrowser"/>
+   <addaction name="menuDelete"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionCreate_Database"/>
+   <addaction name="separator"/>
+   <addaction name="actionActors"/>
+   <addaction name="actionArtists"/>
+   <addaction name="actionAlbums"/>
+   <addaction name="actionAlbum_Artists_Collaborators"/>
+   <addaction name="actionMovie_Info"/>
+   <addaction name="actionMovie_Cast"/>
+   <addaction name="actionShow_Info"/>
+   <addaction name="actionShow_Cast"/>
+   <addaction name="actionMusic_Video_Info"/>
+   <addaction name="actionMusic_Video_Cast"/>
+   <addaction name="actionSongs"/>
+   <addaction name="actionAlbum_Tracks"/>
+  </widget>
+  <action name="actionCreate_Database">
+   <property name="text">
+    <string>Create Database</string>
+   </property>
+   <property name="toolTip">
+    <string>Create Default Database</string>
+   </property>
+  </action>
+  <action name="actionSongs">
+   <property name="text">
+    <string>Songs</string>
+   </property>
+  </action>
+  <action name="actionActors">
+   <property name="text">
+    <string>Actors</string>
+   </property>
+  </action>
+  <action name="actionArtists">
+   <property name="text">
+    <string>Artists</string>
+   </property>
+  </action>
+  <action name="actionAlbums">
+   <property name="text">
+    <string>Albums</string>
+   </property>
+  </action>
+  <action name="actionMovie_Info">
+   <property name="text">
+    <string>Movie Info</string>
+   </property>
+  </action>
+  <action name="actionMovie_Cast">
+   <property name="text">
+    <string>Movie Cast</string>
+   </property>
+  </action>
+  <action name="actionShow_Info">
+   <property name="text">
+    <string>TV Info</string>
+   </property>
+   <property name="toolTip">
+    <string>TV Info</string>
+   </property>
+  </action>
+  <action name="actionShow_Cast">
+   <property name="text">
+    <string>TV Cast</string>
+   </property>
+   <property name="toolTip">
+    <string>TV Cast</string>
+   </property>
+  </action>
+  <action name="actionMusic_Video_Info">
+   <property name="text">
+    <string>Music Video Info</string>
+   </property>
+  </action>
+  <action name="actionMusic_Video_Cast">
+   <property name="text">
+    <string>Music Video Cast</string>
+   </property>
+  </action>
+  <action name="actionAlbum_Artists_Collaborators">
+   <property name="text">
+    <string>Album Artists/Collaborators</string>
+   </property>
+  </action>
+  <action name="actionAlbum_Tracks">
+   <property name="text">
+    <string>Album Tracks</string>
+   </property>
+  </action>
+  <action name="actionDelete_Selected_Item">
+   <property name="text">
+    <string>Delete Selected Item</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="Icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
