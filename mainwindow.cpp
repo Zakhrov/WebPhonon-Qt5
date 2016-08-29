@@ -108,7 +108,7 @@ void MainWindow::cmdopen(QString cmdfile)
     int i;
     int index=sources.size();
 
-    sources.append(Phonon::MediaSource(QUrl(cmdfile)));
+    sources.append(Phonon::MediaSource(QUrl::fromLocalFile(cmdfile)));
     QTableWidgetItem *fitem=new QTableWidgetItem(cmdfile,1);
     i=ui->tableWidget->rowCount();
     ui->tableWidget->insertRow(i);
