@@ -36,7 +36,5 @@
     </qresource>
     <qresource prefix="/profiles">
         <file>AMD_Logo11.jpg</file>
-        <file>Neha_Profile.png</file>
-        <file>Aish_Profile.png</file>
     </qresource>
 </RCC>
