@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql opengl #phonon4qt5 #multimedia multimediawidgets
+QT       += core gui sql opengl phonon4qt5 #multimedia multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
