@@ -68,6 +68,7 @@ void AddMovieDialog::on_pushButton_clicked()
         msg.setText(model->lastError().text());
     }
     msg.exec();
+    this->close();
 
 }
 
