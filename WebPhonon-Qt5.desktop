@@ -6,6 +6,7 @@ Exec=WebPhonon-Qt5 %u
 GenericName[en_US]=Media Player
 GenericName=Media Player
 Icon=WebPhononIcon
+Exec=WebPhonon-Qt5
 MimeType=;
 Name[en_US]=WebPhonon-Qt5
 Name=WebPhonon-Qt5
